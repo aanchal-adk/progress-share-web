@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { unstable_HistoryRouter as HistoryRouter, Routes, Route } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
+import Home from './components/Home';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Profile from './components/Profile';
+import Protected from './components/Protected';
+import history from './helpers/history.helper';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +17,24 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <HistoryRouter history={history}>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="home" element={
+            <Protected>
+              <Home />
+            </Protected>
+          } />
+          <Route path="profile" element={
+            <Protected>
+              <Profile />
+            </Protected>
+          } />
+        </Route>
+      </Routes>
+    </HistoryRouter>
   </React.StrictMode>
 );
 

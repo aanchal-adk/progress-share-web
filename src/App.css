@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+* {
+ font-family: 'Roboto'; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signup-wrapper, .login-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(65.04deg, #FF6700 0%, #FF8D00 77.17%, #FF9300 151.2%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.signup-container, .login-container {
+  width: 700px;
+  height: 700px;
+  background: #FFFFFF;
+  box-shadow: 1px 11px 40px 15px rgba(208, 86, 0, 0.67);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login-container {
+  height: 400px;
+}
+
+.form-container .header {
+  font-size: 18px;
+  color: #63b83c;
+}
+
+.signup-form {
+  padding-right: 10px;
+  width: 300px;
+  /* overflow: scroll; */
+}
+
+.signup-form .form-item {
+  padding: 10px 0;
+  position: relative;
+}
+
+.signup-form .form-item label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.signup-form .form-item input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid rgb(199, 199, 199);
+  width: 278px;
+}
+
+.image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0 10px;
+  /* justify-content: center; */
+}
+
+.logo {
+  display: block;
+  margin-top: 100px;
+  /* position: absolute;
+  top: 20px;
+  right: 20px; */
+}
+
+.login-container .logo {
+  margin-top: 30px;
+}
+
+.login-image {
+  display: block;
+  margin-top: 50px;
+}
+
+.submit-btn {
+  width: 100% !important;
+  padding: 10px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #074EE8;
   color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-btn:disabled {
+  cursor: not-allowed;
+  background-color: #6d89c4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-msg {
+  color: rgb(185, 39, 39);
+  width: 100vh;
+}
+
+.success-msg {
+  color: rgb(61, 180, 61);
+  top: 5px;
+  width: 100vh;
+}
+
+.centered-content {
+  text-align: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal .modal-btn {
+  padding: 10px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #074EE8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal h2 {
+  color: rgb(61, 180, 61);
+}
+
+.login-note {
+  color: rgb(212, 167, 18);
+  font-weight: 600;
 }
