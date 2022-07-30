@@ -1,0 +1,44 @@
+ul.my-tracker-pills {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.my-tracker-pills li {
+  background: linear-gradient(87.69deg, #FF6A01 19.23%, #FF8F01 106.5%);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  width: 300px;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  position: relative;
+}
+
+/* ul.my-tracker-pills li:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 300px;
+  height: fit-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+ul.my-tracker-pills li:hover:before {
+  visibility: visible;
+  opacity: 1;
+} */

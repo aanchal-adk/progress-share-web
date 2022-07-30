@@ -141,3 +141,8 @@
   color: rgb(212, 167, 18);
   font-weight: 600;
 }
+
+.app-content-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}

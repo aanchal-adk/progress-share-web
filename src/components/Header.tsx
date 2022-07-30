@@ -26,7 +26,7 @@ function Header (props: {pathname:string;}) {
         'selected': item.pathname === props.pathname
       });
 
-      return <li className={style}><Link to={item.pathname}>{item.name}</Link></li>
+      return <li key={item.name} className={style}><Link to={item.pathname}>{item.name}</Link></li>
     });
 
     return <ul className="center-menu">
