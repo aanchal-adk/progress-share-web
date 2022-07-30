@@ -11,6 +11,7 @@ import Profile from './components/Profile';
 import Protected from './components/Protected';
 import history from './helpers/history.helper';
 import reportWebVitals from './reportWebVitals';
+import MyTrackers from './components/MyTrackers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,6 +26,11 @@ root.render(
           <Route path="home" element={
             <Protected>
               <Home />
+            </Protected>
+          } />
+          <Route path="my-trackers" element={
+            <Protected>
+              <MyTrackers />
             </Protected>
           } />
           <Route path="profile" element={

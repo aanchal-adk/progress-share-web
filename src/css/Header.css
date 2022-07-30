@@ -11,8 +11,9 @@
   font-weight: 600;
 }
 
-.app-header ul.center-menu li {
+.app-header ul.center-menu li a {
   color: rgb(121, 121, 121);
+  text-decoration: none;
 }
 
 .app-header ul.center-menu li:not(:first-child) {
@@ -21,6 +22,10 @@
 
 .app-header ul.center-menu li.selected {
   border-bottom: 4px solid #FF6801;
+}
+
+.app-header ul.center-menu li.selected a{
+  color: black;
 }
 
 .right-menu {

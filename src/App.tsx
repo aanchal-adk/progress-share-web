@@ -14,12 +14,17 @@ function App() {
     if (location.pathname === '/') {
       navigate(isLoggedIn ? '/home': '/login');
     }
+
+    if (isLoggedIn && (location.pathname === '/login' || location.pathname === '/signup')) {
+      navigate('/home');
+    }
+
   }, [location.pathname, isLoggedIn, navigate]);
 
   return (
     <div className="App">
       {isLoggedIn && <>
-        <Header/>
+        <Header pathname={location.pathname} />
       </>}
 
       <Outlet />

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import '../css/App.css';
 import { fetchMyTrackers } from '../api/tracker.api';
 
-function Home () {
+function MyTrackers () {
   useEffect(() => {
     getMyTrackers();
   }, []);
@@ -19,8 +19,8 @@ function Home () {
   }
 
   return <div className="home-wrapper">
-    Home page
+    Tracker page
   </div>
 }
 
-export default Home;
+export default MyTrackers;
