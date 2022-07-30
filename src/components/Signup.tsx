@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { AxiosError, AxiosResponse } from 'axios';
 
-import '../App.css';
+import '../css/App.css';
 import { signup } from '../api/signup.api';
 import {ReactComponent as LoginImage} from '../assets/login-image.svg';
 import {ReactComponent as Logo} from '../assets/logo-big.svg';
@@ -19,7 +19,6 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
   },
 };
-
 
 function Signup () {
   const [firstName, setFirstName] = React.useState('');

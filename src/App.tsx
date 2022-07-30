@@ -1,15 +1,27 @@
 import React from 'react';
-import { Outlet, Navigate, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
-import './App.css';
+import './css/App.css';
+import Header from './components/Header';
 
 function App() {
+  const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem('isLoggedIn');
   const location = useLocation();
 
+  
+  React.useEffect(() => {
+    if (location.pathname === '/') {
+      navigate(isLoggedIn ? '/home': '/login');
+    }
+  }, [location.pathname, isLoggedIn, navigate]);
+
   return (
     <div className="App">
-      {location.pathname === '/' && <Navigate to={isLoggedIn ? '/home': '/login'} />}
+      {isLoggedIn && <>
+        <Header/>
+      </>}
+
       <Outlet />
     </div>
   );

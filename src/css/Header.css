@@ -1,0 +1,62 @@
+.app-header {
+  
+  padding: 15px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-header ul.center-menu {
+  list-style: none;
+  display: flex;
+  font-weight: 600;
+}
+
+.app-header ul.center-menu li {
+  color: rgb(121, 121, 121);
+}
+
+.app-header ul.center-menu li:not(:first-child) {
+  margin-left: 20px;
+}
+
+.app-header ul.center-menu li.selected {
+  border-bottom: 4px solid #FF6801;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+}
+
+.points-wrapper {
+  margin-left: 20px;
+}
+
+.profile-wrapper {
+  background-color: #9E6CC5;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.new-tracker-btn {
+  background: linear-gradient(84.7deg, #2756B8 25.57%, #5082E9 101.77%);
+  border-radius: 20px;
+  height: fit-content;
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.plus-icon {
+  width: 12px;
+  height: 12px;
+  fill: white;
+  margin-left: 5px;
+}

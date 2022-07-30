@@ -2,7 +2,7 @@ import React from 'react';
 import { AxiosError, AxiosResponse } from 'axios';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 
-import '../App.css';
+import '../css/App.css';
 import { login } from '../api/signup.api';
 import {ReactComponent as Logo} from '../assets/logo-big.svg';
 import { LoginResponseData } from '../interfaces/signup.interface';

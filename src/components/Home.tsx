@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import '../App.css';
+import '../css/App.css';
 import { fetchMyTrackers } from '../api/tracker.api';
 
 function Home () {
