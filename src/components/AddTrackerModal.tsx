@@ -54,8 +54,6 @@ function AddTrackerModal (props: ComponentProps) {
     } catch (err) {
       alert('Error creating Progress Tracker. Make sure the information is correct and try again.');
     }
-
-    
   }
 
   return <>
@@ -103,7 +101,7 @@ function AddTrackerModal (props: ComponentProps) {
             required>
               <option value="7">7</option>
               <option value="14">14</option>
-              <option value="20">20</option>
+              <option value="21">21</option>
             </select>
           </div>
 

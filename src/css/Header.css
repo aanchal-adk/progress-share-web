@@ -1,8 +1,8 @@
 .app-header {
-  
   padding: 15px 100px;
   display: flex;
   justify-content: space-between;
+  background: white;
 }
 
 .app-header ul.center-menu {
@@ -44,6 +44,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.right-menu .profile-wrapper {
   margin-left: 20px;
 }
 

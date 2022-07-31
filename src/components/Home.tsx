@@ -1,14 +1,20 @@
 import classnames from 'classnames';
 import React, { useEffect } from 'react';
+import { useOutletContext } from 'react-router-dom';
 
 import '../css/App.css';
 import '../css/Home.css';
-import { fetchMyTrackers } from '../api/tracker.api';
-import { TrackerInterface } from '../interfaces/trackers.interface';
+import Tracker from './Tracker';
+import { UserInfo } from '../interfaces/user.interface';
+import { fetchMyTrackersWithCheckin } from '../api/tracker.api';
+import { TrackerWCheckinInterface } from '../interfaces/trackers.interface';
+
 
 function Home () {
-  const [myTrackerList, setMyTrackerList] = React.useState<TrackerInterface[]>([]);
-  const [selectedTracker, setSelectedTracker] = React.useState<TrackerInterface | null>(null);
+
+  const {userInfo} = useOutletContext<{userInfo: UserInfo}>();
+  const [myTrackerList, setMyTrackerList] = React.useState<TrackerWCheckinInterface[]>([]);
+  const [selectedTracker, setSelectedTracker] = React.useState<TrackerWCheckinInterface>();
 
   useEffect(() => {
     getMyTrackers();
@@ -16,12 +22,17 @@ function Home () {
 
   const getMyTrackers = async () => {
     try {
-      const result = await fetchMyTrackers();
+      const result = await fetchMyTrackersWithCheckin();
       
       setMyTrackerList(result.data);
 
       if (result.data.length > 0) {
-        setSelectedTracker(result.data[0]);
+        if (!selectedTracker) {
+          setSelectedTracker(result.data[0]);
+        } else {
+          const updatedSelectedTracker = result.data.find(item => item.id === selectedTracker.id);
+          setSelectedTracker(updatedSelectedTracker);
+        }
       }
 
     } catch (err) {
@@ -48,6 +59,11 @@ function Home () {
         })
       }
     </ul>
+    
+    <div className="tracker-list">
+      {selectedTracker && <Tracker userInfo={userInfo} trackerInfo={selectedTracker} getMyTrackers={getMyTrackers} />}
+    </div>
+   
   </div>
 }
 

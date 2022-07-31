@@ -10,7 +10,7 @@ function App() {
   const [userInfo, setuserInfo] = React.useState<UserInfo| null>(null);
 
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const location = useLocation();
 
   React.useEffect(() => {
@@ -41,7 +41,9 @@ function App() {
         <Header pathname={location.pathname} userInfo={userInfo} />
       </>}
 
-      <Outlet />
+      <Outlet context={{
+        userInfo: userInfo
+      }} />
     </div>
   );
 }

@@ -2,6 +2,11 @@
  font-family: 'Roboto'; 
 }
 
+body {
+  height: 100vh;
+  background: #fbfbfbe5;
+}
+
 .signup-wrapper, .login-wrapper {
   width: 100%;
   height: 100vh;
