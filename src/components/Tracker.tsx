@@ -18,7 +18,16 @@ function Tracker (props: ComponentProps) {
   const trackerStreaks = [];
   const total_days = props.trackerInfo.total_days;
   const streakWidth = total_days === 7? '152px': total_days === 14? '75px': '40px';
-  const diff_days = Math.floor((Date.now() - Date.parse(props.trackerInfo.created_at))/(1000*3600*24));
+  
+  const currentDate = new Date();
+  const UTCDay = currentDate.getUTCDate();
+  const UTCMonth = currentDate.getUTCMonth() + 1;
+  const UTCYear = currentDate.getUTCFullYear();
+
+  const date1 = new Date(`${UTCYear}/${UTCMonth}/${UTCDay}`).valueOf();
+  const date2 = new Date(props.trackerInfo.created_at.split('T')[0].replace('-', '/')).valueOf();
+  const diff_days = Math.floor((date1 - date2)/(1000*3600*24));
+
 
   const handleCheckinClick = async (dayNumber: number) => {
     try {
@@ -42,7 +51,7 @@ function Tracker (props: ComponentProps) {
     const bgColor = isCheckedIn ? '#75BA31': '#D9D9D9';
 
     trackerStreaks.push(<div className="streak" style={{width: streakWidth, background: bgColor}}>
-      {diff_days === i && <>
+      {diff_days === (i -1) && <>
         {!isCheckedIn? <Checkin className="checkin" onClick={() => {handleCheckinClick(i)}} />: <Checked className="checked" /> }
       </>}
     </div>);
