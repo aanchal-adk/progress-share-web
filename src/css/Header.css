@@ -38,7 +38,6 @@
 }
 
 .profile-wrapper {
-  background-color: #9E6CC5;
   width: 36px;
   height: 36px;
   border-radius: 18px;
@@ -64,4 +63,62 @@
   height: 12px;
   fill: white;
   margin-left: 5px;
+}
+
+.add-tracker-modal {
+  width: 400px;
+  position: relative;
+}
+
+.add-tracker-modal h4 {
+  margin: 0;
+  color: gray;
+}
+
+.add-tracker-modal .cross-btn {
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  cursor: pointer;
+  fill: gray;
+}
+
+
+/* Form design */
+
+.tracker-form {
+  /* padding-right: 10px;
+  width: 300px; */
+  /* overflow: scroll; */
+}
+
+.tracker-form .form-item {
+  padding: 10px 0;
+  position: relative;
+}
+
+.tracker-form .form-item label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.tracker-form .form-item input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid rgb(199, 199, 199);
+  width: calc(100% - 20px); /* for input to not overflow from parent div need to subtract the padding */
+}
+
+.tracker-form .form-item select {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid rgb(199, 199, 199);
+  background: none;
+  width: 100%;
 }

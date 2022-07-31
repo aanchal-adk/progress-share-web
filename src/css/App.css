@@ -94,11 +94,13 @@
   border: none;
   border-radius: 10px;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .submit-btn:disabled {
   cursor: not-allowed;
   background-color: #6d89c4;
+  cursor: block;
 }
 
 .error-msg {
@@ -131,6 +133,7 @@
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .modal h2 {

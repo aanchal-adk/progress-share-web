@@ -13,6 +13,23 @@ const http = axios.create({
   }
 });
 
+http.interceptors.request.use(
+  config => {
+    if (config.url && !['/refresh-token', '/login', '/signup'].includes(config.url)) {
+      const accessToken = localStorage.getItem('accessToken');
+
+      config.headers = {
+        ...config.headers,
+        'Authorization': `Bearer ${accessToken}`
+      }
+
+    }
+    
+    return config;
+  },
+  resp => resp
+);
+
 http.interceptors.response.use(
   resp => resp,
   async (err: AxiosError) => {

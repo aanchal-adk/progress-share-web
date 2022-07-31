@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "history": "^5.3.0",
+    "pastel-color": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.1.7-beta.1",

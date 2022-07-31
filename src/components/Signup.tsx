@@ -185,7 +185,7 @@ function Signup () {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Success Modal"
       >
         <div className="modal">
           <h2 className="centered-content">Account Successfully Created</h2>
