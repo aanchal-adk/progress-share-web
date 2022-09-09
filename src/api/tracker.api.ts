@@ -8,9 +8,14 @@ export function fetchMyTrackers (): Promise<AxiosResponse<TrackerInterface[]>> {
   return http.get<TrackerInterface[]>('/my-trackers');
 }
 
-export function fetchMyTrackersWithCheckin (): Promise<AxiosResponse<TrackerWCheckinInterface[]>> {
+export function fetchMyTrackersWithCheckin (statusId: number | null): Promise<AxiosResponse<TrackerWCheckinInterface[]>> {
 
-  return http.get<TrackerWCheckinInterface[]>('/my-tracker-w-checkin');
+  return http.get<TrackerWCheckinInterface[]>(statusId ? `/my-tracker-w-checkin?status_id=${statusId}`: '/my-tracker-w-checkin');
+}
+
+export function fetchPublicTrackersWithCheckin (): Promise<AxiosResponse<TrackerWCheckinInterface[]>> {
+
+  return http.get<TrackerWCheckinInterface[]>('/public-tracker-w-checkin');
 }
 
 export function createNewTracker (data: NewTrackerInterface): Promise<AxiosResponse<number>> {

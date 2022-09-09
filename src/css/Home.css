@@ -28,6 +28,67 @@ ul.my-tracker-pills li.unselected:hover {
   opacity: 1;
 }
 
+.tracker-list {
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.tracker {
+  padding: 14px 20px;
+  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  background: white;
+  margin-bottom: 22px;
+}
+
+.self-tracker {
+  border-left: 7px solid orange;
+  border-right: 7px solid orange;
+}
+
+.tracker-top {
+  display: flex;
+  align-items: center;
+}
+
+.tracker-top h4 {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.streak-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.streak {
+  height: 10px;
+  background: gray;
+  border-radius: 10px;
+  position: relative;
+}
+
+.streak .checkin, .checked {
+  position: absolute;
+  top: 120%;
+  left: calc(50% - 9px);
+}
+
+.tracker-bottom {
+  height: 30px;
+}
+
+.empty-home {
+  font-size: 24px;
+  text-align: center;
+  padding: 30px;
+  color: gray;
+}
+
+
+/* ******** To be used later for implementing tooltips ******** */
+
 /* ul.my-tracker-pills li:before {
   content: attr(data-hover);
   visibility: hidden;
@@ -51,39 +112,3 @@ ul.my-tracker-pills li:hover:before {
   visibility: visible;
   opacity: 1;
 } */
-
-.tracker {
-  padding: 14px 20px;
-  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.04);
-  border-radius: 6px;
-}
-
-.tracker-top {
-  display: flex;
-  align-items: center;
-}
-
-.tracker-top h4 {
-  margin: 0;
-  margin-left: 10px;
-}
-
-.streak-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.streak {
-  /* width: 40px; */
-  height: 10px;
-  background: gray;
-  border-radius: 10px;
-  position: relative;
-}
-
-.streak .checkin, .checked {
-  position: absolute;
-  top: 120%;
-  left: 45%;
-}

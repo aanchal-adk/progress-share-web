@@ -1,0 +1,19 @@
+.sub-menu {
+  display: flex;
+  width: 100%;
+  border-bottom: 4px solid rgb(206, 206, 206);
+}
+
+.sub-menu .sub-menu-item {
+  color: #FF7A02;
+  border-radius: 4px 4px 0px 0px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sub-menu .sub-menu-item.selected {
+  color: white;
+  background: linear-gradient(84.04deg, #FF6B02 29.11%, #FF8B02 128.91%);
+}

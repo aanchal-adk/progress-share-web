@@ -19,6 +19,7 @@ export interface NewTrackerInterface {
 export interface TrackerWCheckinInterface {
   id: number;
   userid: number;
+  username: string;
   title: string;
   tracker_type_id: number;
   total_days: number;

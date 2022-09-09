@@ -7,6 +7,7 @@ import {ReactComponent as Checkin} from '../assets/checkin.svg';
 import {ReactComponent as Checked} from '../assets/checked.svg';
 
 import { TrackerWCheckinInterface } from '../interfaces/trackers.interface';
+import classNames from 'classnames';
 
 interface ComponentProps {
   userInfo: UserInfo;
@@ -37,7 +38,12 @@ function Tracker (props: ComponentProps) {
         isRepaired: false
       });
 
-      alert('Successfully checked in for today!');
+      if (props.trackerInfo.total_days === dayNumber) {
+        alert('Congratulations! You have successfully achieved your goal!');
+      } else {
+        alert('Successfully checked in for today!');
+      }
+
 
       props.getMyTrackers();
 
@@ -51,15 +57,20 @@ function Tracker (props: ComponentProps) {
     const bgColor = isCheckedIn ? '#75BA31': '#D9D9D9';
 
     trackerStreaks.push(<div className="streak" style={{width: streakWidth, background: bgColor}}>
-      {diff_days === (i -1) && <>
+      {(props.trackerInfo.userid === props.userInfo.userid) && diff_days === (i -1) && <>
         {!isCheckedIn? <Checkin className="checkin" onClick={() => {handleCheckinClick(i)}} />: <Checked className="checked" /> }
       </>}
     </div>);
   }
 
-  return <div className="tracker">
+  const trackerStyle = classNames({
+    'tracker': true,
+    'self-tracker': props.userInfo.userid === props.trackerInfo.userid
+  })
+
+  return <div className={trackerStyle}>
     <div className="tracker-top">
-      <ProfileIcon username={props.userInfo.username} />
+      <ProfileIcon username={props.trackerInfo.username} />
       <h4>{props.trackerInfo.title}</h4>
 
       {/* To Do: Reactions */}
@@ -70,7 +81,7 @@ function Tracker (props: ComponentProps) {
       {trackerStreaks}
     </div>
     <div className="tracker-bottom">
-
+    {/* To Do: Show days remaining and total reactions received */}
     </div>
   </div>
 }
